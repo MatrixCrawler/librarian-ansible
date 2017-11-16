@@ -16,9 +16,9 @@ module Librarian
         let(:tmp_path) do
           project_path.join('tmp/spec/integration/ansible/source/git')
         end
-        # after do
-        #   tmp_path.rmtree if tmp_path && tmp_path.exist?
-        # end
+        after do
+          tmp_path.rmtree if tmp_path && tmp_path.exist?
+        end
 
         let(:roles_path) do
           tmp_path.join('librarian_roles')
